@@ -12,8 +12,15 @@ namespace QGUI
     class Element
     {
     public:
+        Element(const float weight = 0.0) : m_weight(weight) {}
+
         virtual ~Element() = default;
 
         virtual void render() = 0;
+
+        float getWeight() const { return m_weight; }
+
+    private:
+        float m_weight;
     };
 } // namespace QGUI
