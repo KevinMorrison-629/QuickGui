@@ -15,4 +15,7 @@ endif()
 add_subdirectory(quickgui)
 
 # Add the subdirectory for the test executable
-add_subdirectory(test)
+if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+    message(STATUS "Building QuickGUI as a standalone project. Including tests.")
+    add_subdirectory(test)
+endif()
